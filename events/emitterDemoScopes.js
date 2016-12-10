@@ -25,6 +25,11 @@ emitter.on('rain', function(author){
     //console.log(this);
 });
 
+//multiple listeners for same event
+emitter.on('rain', function(author){
+    console.log('When rain comes down, we also use raincoats : '+author);
+})
+
 emitter.once('snow', function(author){
     console.log('When snow comes down, run for shelter : '+author);
     //console.log(this);
