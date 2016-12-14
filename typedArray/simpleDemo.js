@@ -8,6 +8,8 @@ console.log('Created a buffer of length : '+buffer.byteLength);
 //little to be done from the buffer
 //we need to create views
 
+console.log('The buffer is accessed using views : Ex:Int32Array, Int16Array');
+
 console.log();
 console.log('Working with int32Array. uses 4 bytes')
 //Note that int32Vies uses 4 bytes for a entry
