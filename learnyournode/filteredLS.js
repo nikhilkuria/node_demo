@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var dirName = process.argv[2];
-var validExt = process.argv[3];
+var validExt = "."+process.argv[3];
 
 var filterFile = function(err,data){
   if(err){
