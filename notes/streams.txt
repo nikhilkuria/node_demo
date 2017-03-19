@@ -1,0 +1,32 @@
+#Streams
+https://github.com/substack/stream-handbook
+  -pattern that converts big operations to managable chunks
+
+piping streams
+  -source.pipe(destination)
+    -source (readable stream)
+    -destination (writable stream)
+  -.pipe(dst) returns dst so that you can chain together multiple .pipe() calls together
+  -a.pipe(b).pipe(c) is same as a.pipe(b);b.pipe(c);
+
+Three types
+  - Readable
+    - produce data that can be fed into a writable, transform, or duplex stream by calling .pipe()
+    - can act as source, but not destination
+    - ex: fs.createReadStream
+  - Writable
+    - A writable stream is a stream you can .pipe() to but not from:
+    - can act as destination, but not source
+    - ex: fs.createWriteStream
+  - Duplex (can act as readable and writable)
+    - act as readable and writeable
+  - Transform
+      - as an intermediate transformer,
+        - source.pipe(transform).pipe(destination)
+  - Classic
+
+The destination (writable stream) must send a signal to the source (readable stream) that they are ready for more data
+
+It can be configured how full the read stream can get before it can send data.
+This avoids unnecessary buildup of the read stream, which is unable to send data to the write stream.
+This is called backpressure and is handled automatically
