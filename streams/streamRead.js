@@ -10,4 +10,16 @@ rs._read = function () {
     }
 };
 
-rs.pipe(process.stdout);
+setTimeout(function () {
+  rs.pipe(process.stdout);
+}, 1);
+
+rs.on('end', function(){
+    console.log('end of stream');
+
+})
+
+process.stdout.on('error', function(){
+  console.log("hello");
+  process.exit;
+});
