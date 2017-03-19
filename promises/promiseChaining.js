@@ -7,7 +7,6 @@ function executeRollDie(){
     return new Promise(function(resolve,reject){
         var dieVal = rollDie();
         if(dieVal % 2 == 0){
-            console.log(dieVal);
             resolve(dieVal);
         }else{
             reject(dieVal);
@@ -27,17 +26,20 @@ function logAndContinue(dieVal){
 
 function logAndRestart(dieVal){
     logDieVal('rst '+dieVal);
-    console.log('restart');
     startDieRoll();
 }
 
+function logAndStop(dieVal){
+  logDieVal('done '+dieVal);
+}
+
 function startDieRoll(){
-    
+
     //todo: figure out the strange undefined in the logs
     executeRollDie()
         .then(logAndContinue, logAndRestart)
-        .then(logAndContinue, logAndRestart);
-    
+        .then(logAndStop, logAndRestart);
+
 }
 
 startDieRoll();
