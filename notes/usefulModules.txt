@@ -1,6 +1,7 @@
 fs - file processing
 highland - streams
 bl -
-concat-stream
+concat-stream - write stream that can have a callback
 oppressor - handling the encoding of the response
 through2-map - transform streams
+split - to split the input to line
