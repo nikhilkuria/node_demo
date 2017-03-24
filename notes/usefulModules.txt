@@ -5,3 +5,6 @@ concat-stream - write stream that can have a callback
 oppressor - handling the encoding of the response
 through2-map - transform streams
 split - to split the input to line
+request - make a request and get streams (duplex) for post and read for get
+websocket-stream
+browserify - bundle code with node js require for use in browsers 
